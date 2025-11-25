@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>Redirecting...</title>
+    <script>
+      // 404.html to redirect to index.html with the query and hash
+      // This is useful for single page apps on GitHub Pages using BrowserRouter
+      // However, we are using HashRouter, so this is mostly a fallback for clean URLs if someone types them manually.
+      // Or if the user decides to switch to BrowserRouter later.
+      var path = window.location.pathname;
+      var repo = '/research-viz-lab/';
+      if (path.startsWith(repo)) {
+        path = path.substring(repo.length);
+      }
+      if (path.startsWith('/')) {
+        path = path.substring(1);
+      }
+      
+      // If there is a path (other than index.html), redirect to repo/#/path
+      if (path && path !== 'index.html') {
+          window.location.replace(
+            window.location.protocol + '//' + window.location.hostname + (window.location.port ? ':' + window.location.port : '') +
+            repo + '#/' + path + window.location.search
+          );
+      } else {
+         window.location.replace(
+            window.location.protocol + '//' + window.location.hostname + (window.location.port ? ':' + window.location.port : '') +
+            repo + 'index.html' + window.location.search
+          );
+      }
+    </script>
+  </head>
+  <body>
+  </body>
+</html>
