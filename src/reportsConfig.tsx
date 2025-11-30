@@ -1,6 +1,7 @@
-import { type LucideIcon, BarChart3 } from 'lucide-react';
+import { type LucideIcon, BarChart3, Shield } from 'lucide-react';
 import React from 'react';
 import DummyReport from './pages/DummyReport';
+import TrumpsImmigrationAgenda from './pages/TrumpsImmigrationAgenda';
 
 export interface ReportConfig {
   path: string;
@@ -15,5 +16,11 @@ export const reports: ReportConfig[] = [
     title: 'Engagement Metrics',
     component: DummyReport,
     icon: BarChart3,
+  },
+  {
+    path: 'trumps-immigration-agenda',
+    title: 'Trump’s Immigration Agenda',
+    component: TrumpsImmigrationAgenda,
+    icon: Shield,
   },
 ];
